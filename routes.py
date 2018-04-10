@@ -14,10 +14,6 @@ def getAll():
 def getTempetature(sensor):
   return ds18b20.read(sensor)
 
-@app.route('/api/ds18b20/getTempetature2/<sensor>')
-def getTempetature2(sensor):
-  return ds18b20.read2(sensor)
-
 # Main #
 
 if __name__ == '__main__':
