@@ -1,13 +1,14 @@
 from flask import Flask
 
+import lib.ds18b20 as ds18b20
+
 app = Flask(__name__)
 
 # Routes here #
 
-# Sample #
-@app.route('/path')
-def method():
-  return'something'
+@app.route('/api/ds18b20/getAll')
+def getAll():
+  return ds18b20.listSensors()
 
 # Main #
 
