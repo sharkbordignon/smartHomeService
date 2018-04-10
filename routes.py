@@ -10,6 +10,10 @@ app = Flask(__name__)
 def getAll():
   return ds18b20.listSensors()
 
+@app.route('/api/ds18b20/getTempetature/<sensor>')
+def getTempetature(sensor):
+  return ds18b20.read(sensor)
+
 # Main #
 
 if __name__ == '__main__':
