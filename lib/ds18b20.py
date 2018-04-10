@@ -14,8 +14,10 @@ def listSensors():
 
 def read(sensor):
     location = '/sys/bus/w1/devices/' + sensor.replace("'", "") + '/w1_slave'
+    print "Calling " + location
     tfile = open(location)
     text = tfile.read()
+    print "info: " + text
     tfile.close()
     secondline = text.split("\n")[1]
     temperaturedata = secondline.split(" ")[9]
