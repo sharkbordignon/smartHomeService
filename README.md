@@ -9,5 +9,5 @@ email = {
     'key' : 'your_key'
 }
 
-# sensors
-Currently working with DHT11
+# sensors list
+
