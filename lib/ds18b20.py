@@ -14,14 +14,14 @@ def listSensors():
 
 def read(sensor):
     location = '/sys/bus/w1/devices/' + sensor.replace("'", "") + '/w1_slave'
-    print "Calling " + location
     tfile = open(location)
     text = tfile.read()
-    print "info: " + text
     tfile.close()
     secondline = text.split("\n")[1]
     temperaturedata = secondline.split(" ")[9]
     temperature = float(temperaturedata[2:])
     celsius = temperature / 1000
     farenheit = (celsius * 1.8) + 32
-    return celsius, farenheit
+    scale = ["celsius", "farenheit"]
+    temp = [celsius, farenheit]
+    return json.dumps(zip(scale, temp))
