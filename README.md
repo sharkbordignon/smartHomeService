@@ -11,3 +11,4 @@ email = {
 
 # sensors list
 
+- DS18B20 - Temperature
