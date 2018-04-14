@@ -6,7 +6,6 @@ _login_ = cfg.email['email']
 _password_ = cfg.email['key']
 
 import smtplib
-import datetime
 
 from  email.MIMEMultipart import MIMEMultipart
 from  email.MIMEText import MIMEText
