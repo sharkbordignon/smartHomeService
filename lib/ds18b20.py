@@ -13,7 +13,7 @@ def listSensors():
     return json.dumps(sensors)
 
 def read(sensor):
-    location = '/sys/bus/w1/devices/' + sensor.replace("'", "") + '/w1_slave'
+    location = '/sys/bus/w1/devices/' + sensor + '/w1_slave'
     tfile = open(location)
     text = tfile.read()
     tfile.close()

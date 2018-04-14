@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Routes here #
 @app.route('/api/sensors/getAll/<status>')
-def getAllSensors(status):
+def getAllSensors(status.replace("'", "")):
   return sensors.listSensors(status)
 
 @app.route('/api/ds18b20/getAll')
@@ -16,7 +16,7 @@ def getAlltemperatures():
 
 @app.route('/api/ds18b20/getTempetature/<sensor>')
 def getTempetature(sensor):
-  return ds18b20.read(sensor)
+  return ds18b20.read(sensor.replace("'", ""))
 
 # Main #
 
