@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../config')
+sys.path.append('config')
 import config as cfg
 
 _login_ = cfg.email['email']
@@ -33,3 +33,7 @@ def __createMessenge(to, msgs, datetime):
   msg.attach(MIMEText(body, 'plain'))
   email = msg.as_string()
   return email
+
+#tests#
+import datetime
+sendEmail(_login_, 'my message,', str(datetime.datetime.now()))
