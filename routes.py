@@ -6,8 +6,8 @@ import lib.ds18b20 as ds18b20
 app = Flask(__name__)
 
 # Routes here #
-@app.route('/api/sensors/getAll')
-def getAllSensors():
+@app.route('/api/sensors/getAll/<status>')
+def getAllSensors(status):
   return sensors.listSensors(status)
 
 @app.route('/api/ds18b20/getAll')
