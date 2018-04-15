@@ -10,7 +10,7 @@ import time
 
 if __name__ == '__main__':
   try:
-    while true:
+    while True:
       available_sensors = json.loads(sensors.listSensors('on'))
       temperature_sensores = filter(lambda x: x['type'] == 'temperature', available_sensors)
       if temperature_sensores != []:
