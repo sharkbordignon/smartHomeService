@@ -1,12 +1,8 @@
-import sys
-
-sys.path.append('../Adafruit_Python_SSD1306/')
-
 from flask import Flask
 import os
 import lib.sensors as sensors
 import lib.ds18b20 as ds18b20
-import lib.screen as screen
+import utils.screen as screen
 
 
 app = Flask(__name__)
@@ -25,10 +21,10 @@ def getTempetature(sensor):
   return ds18b20.read(sensor.replace("'", ""))
 
 
-@app.route('/api/screen/test')
-def checkScreen():
-  return screen.showStats()
-
+@app.route('/api/screen/<text>')
+def checkScreen(text):
+  screen.showStats(text)
+  return 'ok'
 # Main #
 
 if __name__ == '__main__':
