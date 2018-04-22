@@ -17,7 +17,7 @@ if __name__ == '__main__':
       if temperature_sensores != []:
         msg = []
         msg.append(str(datetime.datetime.now()))
-        msg.append(str(===xxx===xxx===))
+        msg.append(str('===xxx===xxx==='))
         import lib.ds18b20 as ds18b20
         for x in temperature_sensores:
           temperature = json.loads(ds18b20.read(x['name']))[0][1]
