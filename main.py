@@ -21,9 +21,9 @@ if __name__ == '__main__':
         import lib.ds18b20 as ds18b20
         for x in temperature_sensores:
           temperature = json.loads(ds18b20.read(x['name']))[0][1]
-          msg.append(str(temperature) + ' Celsius')
+          msg.append(x['nickname']+ ': ' + str(temperature) + ' Celsius')
           ss.insertRow(x['nickname'], str(datetime.datetime.now()), temperature)
-        screen.showStats(text)
+        screen.showStats(msg)
       time.sleep(60)
   except KeyboardInterrupt:
     print 'ERROOORRRRRR'
